@@ -19,9 +19,13 @@ public class BinaryConvert {
         for (int i = binary.length()-1; i>=0; i-- ){
             System.out.println("i is " + i);
             if (binary.charAt(i) == '1'){
+                System.out.println("result before is " + result);
+                System.out.println("conversion is before " + conversion);
                 result += conversion;
+                System.out.println("result after is " + result);
             }
             conversion *= 2;
+            System.out.println("conversion after *= is " + conversion);
         }
         return result;
     }

@@ -1,6 +1,10 @@
 package com.algorithms;
 
+
 public class BinaryConvert {
+
+    private static int num;
+
     public static void main(String[] args){
         int number = convertFromBinary("100101");
         System.out.println("Number for binary 100101: " + number);
@@ -19,7 +23,10 @@ public class BinaryConvert {
         */
         for (int i = binary.length()-1; i>=0; i-- ){
             System.out.println("i is " + i);
-            if (binary.charAt(i) == '1'){
+            if(binary.charAt(i) != '1' && binary.charAt(i) != '0') {
+                throw new MyNumberFormatException();
+            }
+            else if (binary.charAt(i) == '1'){
                 result += conversion;
             }
             conversion *= 2;
@@ -32,7 +39,13 @@ public class BinaryConvert {
         int result = 0;
         for (int i = octal.length()-1; i>=0; i-- ){
             System.out.println("i is " + i);
-            int num = Integer.parseInt(Character.toString(octal.charAt(i)));
+
+            try {
+                num = Integer.parseInt(Character.toString(octal.charAt(i)));
+            } catch (NumberFormatException numberFormatException) {
+                throw new MyNumberFormatException();
+            }
+
             result += num*conversion;
             conversion *= 8;
         }
