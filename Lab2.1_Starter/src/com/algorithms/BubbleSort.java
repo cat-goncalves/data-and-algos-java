@@ -20,6 +20,17 @@ bubbleSort(array)
 */
     public static void sort(int[] numbers){
     // implement pseudo-code above
+        for(int i = 0; i < numbers.length; i++) {
+            for(int j = 1; j < numbers.length - i; j++) {
+                System.out.println(String.format("i is: %s, j is %s", i, j));
+                if (numbers[j] < numbers[j - 1]) {
+                    int temp = numbers[j];
+                    numbers[j] = numbers[j - 1];
+                    numbers[j - 1] = temp;
+                    System.out.println(Arrays.toString(numbers));
+                }
+            }
+        }
     }
     
 }

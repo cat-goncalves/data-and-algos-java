@@ -6,6 +6,19 @@ public class BinarySearch {
     }
 
     private static boolean binarySearch(int target, int[] array, int start, int end){
+        while ( start <= end) {
+           int mid = (start + end) /2;
+
+           if (array[mid] == target) {
+               return true;
+           } else if (array[mid] > target) {
+               return binarySearch(target, array, start, mid - 1);
+           } else {
+               return binarySearch(target, array, mid + 1, end);
+           }
+        }
+
+
 //        binarySearch(x, array, start, end)
 //        if(start <= end)
 //            mid = (end - start) / 2 + start

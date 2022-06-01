@@ -27,17 +27,29 @@ public class Intersection {
         int aIndex = 0;
         int bIndex = 0;
         while (aIndex < a.length && bIndex < b.length){
+            System.out.println("Count starts at " + count);
             count++;
+            System.out.println("Count is incremented to " + count);
+            System.out.println("a index: " + aIndex + "\nb index: " + bIndex);
+            System.out.println("retList before" + retList);
+            System.out.println(String.format("a[%s]: %s\nb[%s]: %s", aIndex, a[aIndex], bIndex, b[bIndex]));
             if (a[aIndex] == b[bIndex]) {
                 retList.add(a[aIndex]);
                 aIndex++;
                 bIndex++;
+
+                System.out.println("If(a[aIndex] == b[bIndex])\n index: " + aIndex + "\n b index: " + bIndex);
+                System.out.println("retList inside If" + retList);
             }
             else if (a[aIndex] < b[bIndex]) {
                 aIndex++;
+                System.out.println("a <b\na index: " + aIndex + "\n b index: " + bIndex);
+                System.out.println("a <b\nretList after" + retList);
             }
             else {
                 bIndex++;
+                System.out.println("b < a\na index: " + aIndex + "\n b index: " + bIndex);
+                System.out.println("b < a\nretList after" + retList);
             }
         }
         System.out.println("Total Iterations fast: " + count);
